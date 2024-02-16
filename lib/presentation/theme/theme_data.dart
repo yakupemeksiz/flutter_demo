@@ -11,7 +11,7 @@ class AppThemeData {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: ColorConstants.textColor,
-        foregroundColor: const Color(0xFF36394A),
+        foregroundColor: ColorConstants.buttonForegroundColor,
         elevation: 0,
         textStyle: TextStyle(
           fontSize: 16.sp,

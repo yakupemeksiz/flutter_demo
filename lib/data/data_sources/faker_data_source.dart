@@ -10,16 +10,19 @@ final class FakerDataSource {
     return {
       'items': List.generate(
         dataCount,
-        (index) => {
-          'id': _faker.guid.guid(),
-          'name': _faker.person.name(),
-          'message': _faker.lorem.sentences(3),
-          'sendDate': _faker.date
-              .dateTime(
-                minYear: DateTime.now().year - 10,
-                maxYear: DateTime.now().year,
-              )
-              .toIso8601String(),
+        (index) {
+          final year = DateTime.now().year;
+          return {
+            'id': _faker.guid.guid(),
+            'name': _faker.person.name(),
+            'message': _faker.lorem.sentences(3),
+            'sendDate': _faker.date
+                .dateTime(
+                  minYear: year - 10,
+                  maxYear: year,
+                )
+                .toIso8601String(),
+          };
         },
       ),
     };
